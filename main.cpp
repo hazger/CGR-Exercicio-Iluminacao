@@ -226,12 +226,6 @@ void Key(unsigned char key, int x, int y) {
 			Ks = 1.0;
 			nShiny = 10;
 			break;
-		case 'c': case 'C':
-			Cor.NewColor();
-			obj_color[0] = Cor.r;
-			obj_color[1] = Cor.g;
-			obj_color[2] = Cor.b;
-			break;
 		case 27:
 			exit(0);
 	}
