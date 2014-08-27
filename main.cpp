@@ -91,6 +91,27 @@ void calcColor(GLfloat *vetn, GLfloat x, GLfloat y, GLfloat z){
 	g = max(0, min(1,g));
 	b = max(0, min(1,b));
 	
+	GLfloat lp[3] = {light_pos[0]-x, light_pos[1]-y, light_pos[2]-z};
+	
+	r = r * dotProduct(lp, vetn) * Ka * Kd * Ks;
+	g = g * dotProduct(lp, vetn) * Ka * Kd * Ks;
+	b = b * dotProduct(lp, vetn) * Ka * Kd * Ks;
+
+	/*
+	*****Forma certa de fazer precisa melhorar ainda
+	http://professor.unisinos.br/ltonietto/jed/cgr/dicasParaDifusa.txt
+	GLfloat s[3] = {light_pos[0]-x, light_pos[1]-y, light_pos[2]-z};
+	
+	GLfloat d = calcMagnitude(s);
+	GLfloat ad = dotProduct(s, vetn);
+	GLfloat fatt = 1 / (d*d);
+		
+
+	r = r * d * ad * fatt;
+	g = g * d * ad * fatt;
+	b = b * d * ad * fatt;
+	*/
+
 	glColor3f(r,g,b);
 }
 
