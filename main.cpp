@@ -70,16 +70,6 @@ float dotProduct(GLfloat *vetor1, GLfloat *vetor2) {
 }
 
 void calcColor(GLfloat *vetn, GLfloat x, GLfloat y, GLfloat z){
-	//Passos para o cálculo de iluminação:
-	//1) cor do objeto
-	//2) ka = [0, 1]
-	//3) Se vertices está iluminado (menos de 90 graus)
-	//4) kd = [0, 1]
-	//5) atenuação atmosférica (cálculo de dist.)
-	//6) Se vertice está iluminado (menos de 90 graus). 
-	//7) shininess, quanto maior, menor a região e mais intensa
-	//8) soma tudo!
-
 	float r = 0.2F;
 	float g = 0.8F;
 	float b = 0.9F;
