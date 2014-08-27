@@ -1,6 +1,6 @@
 #pragma once
 
-#define WIN32_LEAN_AND_MEAN		
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <tchar.h>
@@ -8,7 +8,7 @@
 #include <windows.h>
 #include <math.h>
 #include <iostream>
-//#include "RandomColor.h"
+
 
 #define SCREEN_W 1024
 #define SCREEN_H 768
@@ -37,7 +37,7 @@ static GLfloat amb_color[3] = {0.8f,0.8f,0.8f};
 static GLfloat dif_color[3] = {1.0f,1.0f,1.0f};
 static GLfloat obj_color[3] = {0.0f,0.0f,1.0f};
 static int vertexRender = 0;
-//static RandomColor Cor = RandomColor();
+
 static float Ka = .5f;
 static float Kd = .5f;
 static float Ks = .5f;
