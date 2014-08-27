@@ -98,8 +98,8 @@ void calcColor(GLfloat *vetn, GLfloat x, GLfloat y, GLfloat z){
 	b = b * dotProduct(lp, vetn) * Ka * Kd * Ks;
 
 	/*
-	*****Forma certa de fazer precisa melhorar ainda
-	http://professor.unisinos.br/ltonietto/jed/cgr/dicasParaDifusa.txt
+	*****Forma certa de implementar preciso melhorar esse codigo um pouco(MUITO)
+	
 	GLfloat s[3] = {light_pos[0]-x, light_pos[1]-y, light_pos[2]-z};
 	
 	GLfloat d = calcMagnitude(s);
