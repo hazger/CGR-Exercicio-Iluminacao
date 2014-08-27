@@ -37,7 +37,6 @@ static GLfloat amb_color[3] = {0.8f,0.8f,0.8f};
 static GLfloat dif_color[3] = {1.0f,1.0f,1.0f};
 static GLfloat obj_color[3] = {0.0f,0.0f,1.0f};
 static int vertexRender = 0;
-
 static float Ka = .5f;
 static float Kd = .5f;
 static float Ks = .5f;
@@ -81,8 +80,6 @@ void calcColor(GLfloat *vetn, GLfloat x, GLfloat y, GLfloat z){
 	//7) shininess, quanto maior, menor a região e mais intensa
 	//8) soma tudo!
 
-	// aqui vai a resolução da equação conforme visto em aula.
-
 	float r = 0.2F;
 	float g = 0.8F;
 	float b = 0.9F;
@@ -93,13 +90,14 @@ void calcColor(GLfloat *vetn, GLfloat x, GLfloat y, GLfloat z){
 	
 	GLfloat lp[3] = {light_pos[0]-x, light_pos[1]-y, light_pos[2]-z};
 	
+	
 	r = r * dotProduct(lp, vetn) * Ka * Kd * Ks;
 	g = g * dotProduct(lp, vetn) * Ka * Kd * Ks;
 	b = b * dotProduct(lp, vetn) * Ka * Kd * Ks;
-
-	/*
-	*****Forma certa de implementar preciso melhorar esse codigo um pouco(MUITO)
 	
+	
+	/*
+	//segunda forma de calcular (mais bonita)
 	GLfloat s[3] = {light_pos[0]-x, light_pos[1]-y, light_pos[2]-z};
 	
 	GLfloat d = calcMagnitude(s);
@@ -107,9 +105,9 @@ void calcColor(GLfloat *vetn, GLfloat x, GLfloat y, GLfloat z){
 	GLfloat fatt = 1 / (d*d);
 		
 
-	r = r * d * ad * fatt;
-	g = g * d * ad * fatt;
-	b = b * d * ad * fatt;
+	r = r * d * ad * fatt * Ka * Kd * Ks;
+	g = g * d * ad * fatt * Ka * Kd * Ks;
+	b = b * d * ad * fatt * Ka * Kd * Ks;
 	*/
 
 	glColor3f(r,g,b);
