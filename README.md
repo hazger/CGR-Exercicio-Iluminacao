@@ -8,7 +8,7 @@ W, A, S, D, E, Q Movem a luz
 
 / * alteram a reflexao do objeto
 
-+ - alteram a intensidade da luz
+<+>, <-> alteram a intensidade da luz
 
 V suaviza o objeto
 F coloca ele em modo vertice outra vez
