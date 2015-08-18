@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <math.h>
 #include <iostream>
+#include <minmax.h> //necessario para o max() funcionar
 
 
 #define SCREEN_W 1024
